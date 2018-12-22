@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+header {
+	text-align: center;
+	border-bottom: 2px solid gray;
+	padding-bottom: 90px;
+}
+body {
+  background-color: #333333;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  border: 2px solid;
+  border-color: #999999;
+  border-radius: 25px;
+  padding: 5px;
+  margin: 10px;
+  font-family: sans-serif; Arial;
+}
+a {
+    text-decoration: none;
+    color: #ffffcc;
+    font-size: 1.2em;
+}
+article {
+	padding-left: 20px;
+	padding-top: 20px;
+	min-height: 280px;
+}
+
+h1,
+h2,
+h3,
+h4
+h5 {
+    color: #ffffff;
+}
+
+h1,
+h2 {
+    font-family: 'georgia', serif;
+    margin: 0;
+}
+p,
+dd,
+dt {
+		font-size: 14px;
+    color: #cccccc;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffcc;
+    font-size: 1.2em;
+}
+
+
+/* Header/Blog Title */
+.header {
+  background: #333333;
+  text-align: center;
+  border-bottom: 2px solid gray;
+  padding-bottom: 40px;
+  left: 30%;
+}
+.loginpage {
+	text-align: center;
+}
+.header h1 {
+  font-size: 50px;
+}
+
+.logo {
+	float: left;
+	padding-left: 10px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333333;
+	border-bottom: 2px solid gray;
+}
+
+/* Style the topnav links */
+.topnav a {
+  background-color: #333333;
+  float: right;
+  color: #cccccc;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #999999;
+  border-radius: 12px;
+  padding: 8px 28px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+background-color: #cccccc;
+color: #333333;
+text-decoration: none;
+}
+.button {
+	background-color: #333333;
+	color: #ffffcc;
+	border: 2px solid #999999;
+	border-radius: 12px;
+	padding: 8px 28px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	cursor: pointer;
+}
+
+.button {
+	background-color: #333333;
+	color: #cccccc;
+	border: 2px solid #999999;
+}
+
+.button:hover {
+	background-color: #cccccc;
+	color: #333333;
+	text-decoration: none;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+	padding-top: 20px;
+  float: left;
+  width: 25%;
+	border-right: 2px solid gray;
+	min-height: 330px;
+}
+
+/* Right column */
+.rightcolumn {
+  float: right;
+  width: 75%;
+  background-color: #333333;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 20%;
+  padding: 5px;
+}
+
+/* Add a card effect for articles */
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+
+  background: #333333;
+  border-top: 2px solid gray;
+  padding-top: 5px;
+  text-align: right;
+  bottom: 0;
+}
+
+.inline {
+	padding-top: 20px;
+	display: inline;
+}
+.name {
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}

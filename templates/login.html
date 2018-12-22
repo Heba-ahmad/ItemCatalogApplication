@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+<!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+    </script>
+    <script src="//apis.google.com/js/platform.js?onload=start"async defer>
+    </script>
+<!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+</head>
+<body>
+    <header>
+      <img class="logo" src="{{ url_for('static', filename='logo.png') }}"
+        alt="the film logo" height="180" width="253">
+        <h1><a href = "{{url_for('index')}}">Perfumes Catalog</a>
+      </h1>
+    </header>
+
+    <div class="topnav">
+  		<div class="inline login">
+  	{%if 'username' not in session %}
+  	<a class="button" href="{{url_for('new_state')}}">Login </a>
+  	{% else %}
+  	<a class="button" href="{{url_for('gdisconnect')}}">Logout </a>
+  	{% endif %}
+  	<a href="{{url_for('index')}}">Home</a>
+    <p style="float:left">
+
+  	<!--MESSAGE FLASHING EXAMPLE -->
+  	{% with messages = get_flashed_messages() %}
+  	{% if messages %}
+
+  	<ul>
+  	{% for message in messages %}
+  		<p style="color:grey"><strong>{{message}}</strong></p>
+  		{% endfor %}
+  	</ul>
+  	{% endif %}
+  	{% endwith %}
+  </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="leftcolumn">
+
+
+          <dd><h3 style="color: #AAB7B8">Please Login </h3></dd>
+
+
+          </div>
+    <div class="rightcolumn">
+    <article class="loginpage">
+      <!-- Google Plus sign in-->
+    <div id="signInButton">
+    <span class="g-signin"
+      data-scope="openid email"
+      data-clientid="341492390722-epr7kj78ho3ntvkju068quepabet1dsv.apps.googleusercontent.com"
+      data-redirecturi="postmessage"
+      data-accesstype="offline"
+      data-cookiepolicy="single_host_origin"
+      data-callback="signInCallback"
+      data-approvalprompt="force">
+    </span>
+    </div>
+    <div id="result"></div>
+    <script>
+    function signInCallback(authResult) {
+      if (authResult['code']) {
+        // Hide the sign-in button now that the user is authorized
+        $('#signinButton').attr('style', 'display: none');
+        // Send 1-time-use code to server, if it responds with a 'login successful' message, redirect back to the homepage
+        $.ajax({
+          type: 'POST',
+          url: '/gconnect?state={{STATE}}',
+          processData: false,
+          data: authResult['code'],
+          contentType: 'application/octet-stream; charset=utf-8',
+          success: function(result) {
+            // Handle or verify the server response if necessary.
+            if (result) {
+              $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
+             setTimeout(function() {
+              window.location.href = "/catalog";
+            }, 5000);
+          } else if (authResult['error']) {
+        console.log('There was an error: ' + authResult['error']);
+      } else {
+            $('#result').html('Failed to make a server-side call. Check your configuration and console.');
+             }
+          }
+      }); } }
+    </script>
+<!--END GOOGLE PLUS SIGN IN -->
+    </article>
+    </div>
+  </div>
+    <div class="footer">
+      <a href ="https://www.linkedin.com/in/heba-sa-ada-614002173/" target="_blank"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="my linkedin Link" height="24" width="30"></a> &nbsp
+      <a href="https://github.com/Heba-ahmad" target="_blank"><img src="{{ url_for('static', filename='github.png') }}" alt="my GitHub Link" height="24" width="24"></a> &nbsp&nbsp
+    </div>
+
+
+</body>
+</html>

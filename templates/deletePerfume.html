@@ -1,0 +1,28 @@
+{% include "header.html" %}
+<div class="row">
+  <div class="leftcolumn">
+      <dd><h3 style="color: #AAB7B8">
+        <a href= '{{url_for("favorite_perfumes",perfume_id=fragrance.id)}}'> {{fragrance.name}} Category</a>
+      </h3></dd>
+  </div>
+  <div class="rightcolumn">
+  <article>
+  <form action='{{url_for("delete_favorite", perfume_id=perfume_id, favorite_id= i.id)}}' method='POST'>
+
+    <h1>Are you sure you want to delete this Perfume</h1><br><br>
+    <dd><h2 style="color: red">{{i.name}}</h2></dd>
+    <br><br>
+
+    <button class="button" type="submit" name="delete">Delete</button>
+    <a class="button"href = '{{url_for("favorite_perfumes", perfume_id=i.perfume_id)}}'>Cancel</a>
+  </form>
+  </article>
+  </div>
+  </div>
+  <div class="footer">
+    <a href ="https://www.linkedin.com/in/heba-sa-ada-614002173/" target="_blank"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="my linkedin Link" height="24" width="30"></a> &nbsp
+    <a href="https://github.com/Heba-ahmad" target="_blank"><img src="{{ url_for('static', filename='github.png') }}" alt="my GitHub Link" height="24" width="24"></a> &nbsp&nbsp
+  </div>
+
+  </body>
+  </html>

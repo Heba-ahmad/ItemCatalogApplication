@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+
+	</head>
+
+<body>
+  <header>
+        <img class="logo" src="{{ url_for('static', filename='logo.png') }}"
+          alt="the film logo" height="180" width="253">
+          <h1><a href = "{{url_for('index')}}">Perfumes Catalog</a>
+        </h1>
+				<div style="float:left">
+				<h3>
+
+				<!--MESSAGE FLASHING EXAMPLE -->
+				{% with messages = get_flashed_messages() %}
+				{% if messages %}
+
+				<ul>
+				{% for message in messages %}
+					<br><p style="color:grey"><strong>{{message}}</strong></p>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				{% endwith %}
+			</h3></div>
+  </header>
+	<div class="topnav">
+		<div class="inline login">
+	{%if 'username' not in session %}
+	<a class="button" href="{{url_for('new_state')}}">Login </a>
+	{% else %}
+	<a class="button" href="{{url_for('gdisconnect')}}">Logout </a>
+	{% endif %}
+	<a href="{{url_for('index')}}">Home</a>
+
+</div>
+</div>
