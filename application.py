@@ -112,6 +112,11 @@ def gconnect():
     login_session['email'] = data['email']
     login_session['provider'] = 'google'
 
+    # See if a user exists, if it doesn't make a new one
+    user_id = getUserID(login_session['email'])
+    if not user_id:
+        user_id = createUser(login_session)
+    login_session['user_id'] = user_id
     output = ''
     output += '<h1>Welcome, '
     output += login_session['username']
@@ -121,7 +126,7 @@ def gconnect():
     output += login_session['picture']
     output += ' " style = "width: 300px; height: 300px;border-radius: \
     150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"> '
-    flash("Welcome %s" % login_session['username'])
+    # flash("Welcome %s" % login_session['username'])
     # print "done!"
     return output
 
@@ -233,7 +238,7 @@ def index():
     favorite = session.query(TopSelections).order_by(
             TopSelections.id.desc()).limit(7)
     if 'username' not in login_session:
-        flash("Please login")
+        # flash("Please login")
         return render_template(
             'publichome.html', perfumes=perfumes, favorite=favorite)
     else:

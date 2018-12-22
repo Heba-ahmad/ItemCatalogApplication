@@ -77,6 +77,8 @@ To start running the application on your device you need to [clone](https://gith
 > [![Image](jpg/catalog_4.jpg)](Image)
 ----
 > [![Image](jpg/catalog_5.jpg)](Image)
+----
+> [![Image](jpg/catalog_6.jpg)](Image)
 
 ### Debugging
 If the application doesn't run, make sure of the following points:
