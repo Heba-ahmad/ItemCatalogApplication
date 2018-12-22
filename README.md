@@ -55,13 +55,14 @@ To start running the application on your device you need to [clone](https://gith
 
 - to let you login to the Linux VM. (Please do not shut down the terminal after the login)
 - write the following command for running the application:
-
-> $ cd /vagrant
-> $ cd vagrant
-> $ cd catalog
-> $ python database_setup.py
-> $ python lotsofperfumes.py
-> $ python application.py
+```
+ $ cd /vagrant
+ $ cd vagrant
+ $ cd catalog
+ $ python database_setup.py
+ $ python lotsofperfumes.py
+ $ python application.py
+```
 
 - Once it is up and running, open your browser to visit [localhost:8000 link](http://localhost:8000/)
 
