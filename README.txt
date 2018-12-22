@@ -6,7 +6,7 @@ Udacity Full Stack Web Developer Nanodegree project4 developed by Heba Sa'ada
 Perfumes Catalog Application, is the name of my application provides a list of top selections of perfumes within a variety of categories as well as provide a user registration and authentication system. Registered users will have the ability to add, edit, and delete their own items.
 
 ## Getting Started
-To start running the application on your device you need to [clone](https://github.com/arrickx/Item-Catalog-Application.git)* or *[download](https://github.com/arrickx/Item-Catalog-Application.git)* this project via [GitHub](https://github.com) to your local machine.
+To start running the application on your device you need to [clone](https://github.com/Heba-ahmad/ItemCatalogApplication.git)* or *[download](https://github.com/Heba-ahmad/ItemCatalogApplication.git)* this project via [GitHub](https://github.com) to your local machine.
 
 ### Project Structure
 ```
