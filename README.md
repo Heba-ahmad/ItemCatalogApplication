@@ -35,50 +35,35 @@ To start running the application on your device you need to [clone](https://gith
 ```
 ## How to Run?
 ### Prerequisites
-*[Python ~2.7](https://www.python.org/)
-* Unix-style terminal(Windows user [Git Bash terminal](https://git-scm.com/downloads))
+* [Python ~2.7](https://www.python.org/)
+* Unix-style terminal or for Windows user [Git Bash terminal](https://git-scm.com/downloads))
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](https://www.vagrantup.com/downloads.html)
-
-You will also need to download these following files to make it work.
 * [VM configuration](https://d17h27t6h515a5.cloudfront.net/topher/2017/August/59822701_fsnd-virtual-machine/fsnd-virtual-machine.zip)
 
 ### Installing or initializing
 
-* Unzip the **VM configuration** and you will find a **vagrant** folder
-* Use the **Git Bash** or **Terminal** to get into the **vagrant** folder from **VM configuration**
-* run the following command
-```
-$ vagrant up
-```
-* This will cause Vagrant to download the Linux operating system and install it.
-* After it finished, you can run this command
-```
-$ vagrant ssh
-```
-* And this will let you login to the Linux VM. (Please do not shut down the terminal after the login)
+- Unzip the **VM configuration** and add the catalog application folder inside **vagrant** folder
+- Use the **Git Bash** or **Terminal** to get into the **vagrant** folder from **VM configuration** by running the following command:
 
-### Setting up the enviroment
-* Move the folder you downloaded from GitHub and put it into the vagrant folder
-* use the following line to get into the vagrant VM folder
-```
-$ cd /vagrant
-```
-* Use the command line to get in to the folder you just downloaded
-```
-$ cd vagrant
-$ cd catalog
-```
-* run the following commands
-```
-$ python database_setup.py
-$ python lotsofperfumes.py
-```
-* once the items succesfully added, you can run the following command
-```
-$ python application.py
-```
-* Once it is up and running, open your browser to visit [localhost:8000 link](http://localhost:8000/)
+> $ vagrant up
+
+- This will let vagrant to download the Linux operating system and install it.
+- After it finished, run the following command:
+
+> $ vagrant ssh
+
+- to let you login to the Linux VM. (Please do not shut down the terminal after the login)
+- write the following command for running the application:
+
+> $ cd /vagrant
+> $ cd vagrant
+> $ cd catalog
+> $ python database_setup.py
+> $ python lotsofperfumes.py
+> $ python application.py
+
+- Once it is up and running, open your browser to visit [localhost:8000 link](http://localhost:8000/)
 
 
 ### How to use
@@ -94,6 +79,10 @@ $ python application.py
 ----
 > [![Image](jpg/catalog_5.jpg)](Image)
 
+### Debugging
+If the application doesn't run, make sure of the following points:
+* You have run database_setup.py before running the application.
+* you have The latest version of Flask 1.x is installed.
 
 ## Acknowledgment
 * Fragrance and Perfumes information provided form:
