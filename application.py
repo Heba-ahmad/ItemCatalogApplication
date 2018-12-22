@@ -42,7 +42,6 @@ def new_state():
     state = ''.join(random.choice(string.ascii_uppercase + string.
                     digits) for x in xrange(32))
     login_session['state'] = state
-    # return "The current session state is %s" % login_session['state']
     return render_template('login.html', STATE=state)
 
 
@@ -113,9 +112,6 @@ def gconnect():
     login_session['email'] = data['email']
     login_session['provider'] = 'google'
 
-    # See if a user exists, if not, make a new one
-    if not check_user():
-        createUser()
     output = ''
     output += '<h1>Welcome, '
     output += login_session['username']

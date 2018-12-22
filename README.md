@@ -65,7 +65,6 @@ To start running the application on your device you need to [clone](https://gith
 
 - Once it is up and running, open your browser to visit [localhost:8000 link](http://localhost:8000/)
 
-
 ### How to use
 * Here the different categories with the items in public home page.
 > [![Image](jpg/catalog_1.jpg)](Image)
@@ -86,8 +85,8 @@ If the application doesn't run, make sure of the following points:
 
 ## Acknowledgment
 * Fragrance and Perfumes information provided form:
-https://www.liveabout.com/types-of-perfume-346103
+- https://www.liveabout.com/types-of-perfume-346103
 * Projects were helpful to me:
-https://github.com/arrickx/Item-Catalog-Application
-https://github.com/sagarchoudhary96/P5-Item-Catalog/blob/master/main.py
-https://github.com/SDey96/Udacity-Item-Catalog-Project/blob/master/app.py
+- https://github.com/arrickx/Item-Catalog-Application
+- https://github.com/sagarchoudhary96/P5-Item-Catalog/blob/master/main.py
+- https://github.com/SDey96/Udacity-Item-Catalog-Project/blob/master/app.py
